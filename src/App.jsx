@@ -4,6 +4,7 @@ import Sidebar from './components/layout/Sidebar';
 import Header from './components/layout/Header';
 import Dashboard from './pages/Dashboard';
 import Budget from './pages/Budget';
+import BudgetApproval from './pages/BudgetApproval';
 import Transactions from './pages/Transactions';
 import Report from './pages/Report'; // Import the new Report page
 import AddTransactionModal from './components/modals/AddTransactionModal';
@@ -24,6 +25,7 @@ function App() {
           <Route path="/budget" element={<><Header title="Budget" /><Budget /></>} />
           <Route path="/transactions" element={<><Header title="Transaction" /><Transactions /></>} />
           <Route path="/report" element={<><Header title="Report" /><Report /></>} />
+          <Route path="/budget/approval" element={<BudgetApproval />} />
         </Routes>
       </main>
       

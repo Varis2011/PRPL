@@ -1,0 +1,523 @@
+[
+  {
+    "id": 1762411653203,
+    "startDate": "2025-11-03",
+    "endDate": "2025-11-07",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "3"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "3"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "3"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "3"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "status": "rejected"
+  },
+  {
+    "id": 1762411653219,
+    "status": "approved"
+  },
+  {
+    "id": 1762411856459,
+    "startDate": "2025-10-06",
+    "endDate": "2025-11-07",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "5"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "5"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "5"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "5"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "status": "approved"
+  },
+  {
+    "id": 1762412501765,
+    "startDate": "2025-11-13",
+    "endDate": "2025-11-15",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "5"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "10"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "8"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "6"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "status": "rejected"
+  },
+  {
+    "id": 1762412546617,
+    "startDate": "2025-11-02",
+    "endDate": "2025-11-07",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "5"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "7"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "4"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "3"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "status": "rejected"
+  },
+  {
+    "id": 1762412666202,
+    "startDate": "2025-11-03",
+    "endDate": "2025-11-07",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "5"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "5"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "5"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "7"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "status": "rejected"
+  },
+  {
+    "id": 1762416948909,
+    "name": "Test 1",
+    "startDate": "2025-11-02",
+    "endDate": "2025-11-06",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "5"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "5"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "5"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "5"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "totalAmount": 0,
+    "status": "approved"
+  },
+  {
+    "id": 1762417511774,
+    "name": "Test 2",
+    "startDate": "2025-11-02",
+    "endDate": "2025-11-06",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "4"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "3"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "80"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "1"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "totalAmount": 0,
+    "status": "approved"
+  },
+  {
+    "id": 1762417565250,
+    "name": "Dana Desa 1",
+    "startDate": "2025-11-02",
+    "endDate": "2025-11-12",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "5"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "5"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "5"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "5"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "totalAmount": 0,
+    "status": "approved"
+  },
+  {
+    "id": 1762417618976,
+    "name": "Test 3",
+    "startDate": "2025-11-02",
+    "endDate": "2025-11-13",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "1"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "1"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "1"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "1"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "totalAmount": 0,
+    "status": "approved"
+  },
+  {
+    "id": 1762418967431,
+    "name": "Test 4",
+    "startDate": "2025-11-01",
+    "endDate": "2025-11-06",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "5"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "5"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "5"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "7"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "totalAmount": 0,
+    "status": "approved"
+  },
+  {
+    "id": 1762419377574,
+    "name": "Test 5",
+    "startDate": "2025-11-01",
+    "endDate": "2025-11-07",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "5"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "5"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "5"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "5"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "totalAmount": 0,
+    "status": "approved"
+  },
+  {
+    "id": 1762420413753,
+    "name": "Test 6",
+    "startDate": "2025-11-02",
+    "endDate": "2025-11-06",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "5"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "5"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "5"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "5"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "totalAmount": 100000000000,
+    "status": "approved"
+  },
+  {
+    "id": 1762422028833,
+    "name": "Test 6",
+    "startDate": "2025-11-01",
+    "endDate": "2025-11-06",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "7"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "4"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "5"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "2"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "totalAmount": 100000000000,
+    "status": "approved"
+  },
+  {
+    "id": 1762440490376,
+    "name": "Test 7",
+    "startDate": "2025-11-02",
+    "endDate": "2025-11-06",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "5"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "3"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "7"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "10"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "totalAmount": 100000000,
+    "status": "approved"
+  },
+  {
+    "id": 1762440568171,
+    "name": "test 7",
+    "startDate": "",
+    "endDate": "",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "5"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "5"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "5"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "5"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "totalAmount": 100000000,
+    "status": "approved"
+  },
+  {
+    "id": 1762440587352,
+    "name": "test 7",
+    "startDate": "",
+    "endDate": "",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "5"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "5"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "5"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "5"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "totalAmount": 100000000000,
+    "status": "approved"
+  },
+  {
+    "id": 1762441184863,
+    "name": "Budget for November",
+    "startDate": "2025-10-19",
+    "endDate": "2025-11-06",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "7"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "5"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "3"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "8"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "totalAmount": 100000000000,
+    "status": "approved"
+  }
+]

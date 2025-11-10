@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1762517041970,
+    "title": "test 3",
+    "amount": "50000",
+    "type": "expense",
+    "category": "Citizen",
+    "description": "fsef",
+    "attachment": null,
+    "date": "2025-11-07"
+  },
+  {
+    "id": 1762517260264,
+    "title": "Income 1",
+    "amount": "500000",
+    "type": "expense",
+    "category": "Infrastructure",
+    "description": "Test",
+    "attachment": null,
+    "date": "2025-11-07"
+  },
+  {
+    "id": 1762517551765,
+    "title": "Income 2",
+    "amount": "500000",
+    "type": "income",
+    "category": "Infrastructure",
+    "description": "fssdfsdf",
+    "attachment": null,
+    "date": "2025-11-07"
+  },
+  {
+    "id": 1762519907626,
+    "title": "Expense 3",
+    "amount": "2342543",
+    "type": "expense",
+    "category": "Infrastructure",
+    "description": "Desc ",
+    "attachment": null,
+    "date": "2025-11-07"
+  }
+]
