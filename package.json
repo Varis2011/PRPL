@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "nodemon server/index.js"
+    "server": "node backend/server.js",
+    "start": "node backend/server.js"
   },
   "dependencies": {
     "body-parser": "^2.2.0",
