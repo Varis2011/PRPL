@@ -38,5 +38,45 @@
     "description": "Desc ",
     "attachment": null,
     "date": "2025-11-07"
+  },
+  {
+    "id": 1763006131861,
+    "title": "a transaction",
+    "amount": "1200000",
+    "type": "expense",
+    "category": "Citizen",
+    "description": "",
+    "attachment": null,
+    "date": "2025-11-29"
+  },
+  {
+    "id": 1763010611109,
+    "title": "test_database",
+    "amount": "122222",
+    "type": "income",
+    "category": "Infrastructure",
+    "description": "",
+    "attachment": null,
+    "date": "2025-11-12"
+  },
+  {
+    "id": 1763010659307,
+    "title": "test_database",
+    "amount": "1222222",
+    "type": "expense",
+    "category": "Infrastructure",
+    "description": "",
+    "attachment": null,
+    "date": "2025-11-13T05:10:59.307Z"
+  },
+  {
+    "id": 1763011305543,
+    "title": "test again",
+    "amount": "122",
+    "type": "expense",
+    "category": "Uncategorized",
+    "description": "",
+    "attachment": null,
+    "date": "2025-11-13T05:21:45.543Z"
   }
 ]

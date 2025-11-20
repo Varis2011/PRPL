@@ -519,5 +519,138 @@
     "unexpectedExpensePercent": 10,
     "totalAmount": 100000000000,
     "status": "approved"
+  },
+  {
+    "id": 1763006210426,
+    "name": "Unnamed Budget",
+    "startDate": "",
+    "endDate": "",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": ""
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": ""
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": ""
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": ""
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "totalAmount": 100000000000,
+    "status": "rejected"
+  },
+  {
+    "id": 1763608726398,
+    "name": "november",
+    "startDate": "2025-11-27",
+    "endDate": "2025-11-30",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "20"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "20"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "20"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "20"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "totalAmount": 100000000000,
+    "status": "rejected"
+  },
+  {
+    "id": 1763608921498,
+    "name": "november",
+    "startDate": "",
+    "endDate": "",
+    "allocations": [
+      {
+        "id": 1,
+        "title": "Infrastructure",
+        "percentage": "30"
+      },
+      {
+        "id": 2,
+        "title": "Citizen",
+        "percentage": "30"
+      },
+      {
+        "id": 3,
+        "title": "Administrative",
+        "percentage": "30"
+      },
+      {
+        "id": 4,
+        "title": "Social Program",
+        "percentage": "30"
+      }
+    ],
+    "unexpectedExpensePercent": 10,
+    "totalAmount": 100000000000,
+    "status": "rejected"
+  },
+  {
+    "id": 1763609531092,
+    "title": "november - Infrastructure",
+    "amount": 20000000000,
+    "category": "Infrastructure",
+    "description": "Allocation for Infrastructure",
+    "unexpected_percent": 10,
+    "total_amount": 100000000000,
+    "status": "approved"
+  },
+  {
+    "id": 1763609531107,
+    "title": "november - Citizen",
+    "amount": 20000000000,
+    "category": "Citizen",
+    "description": "Allocation for Citizen",
+    "unexpected_percent": 10,
+    "total_amount": 100000000000,
+    "status": "approved"
+  },
+  {
+    "id": 1763609531116,
+    "title": "november - Administrative",
+    "amount": 20000000000,
+    "category": "Administrative",
+    "description": "Allocation for Administrative",
+    "unexpected_percent": 10,
+    "total_amount": 100000000000,
+    "status": "approved"
+  },
+  {
+    "id": 1763609531126,
+    "title": "november - Social Program",
+    "amount": 10000000000,
+    "category": "Social Program",
+    "description": "Allocation for Social Program",
+    "unexpected_percent": 10,
+    "total_amount": 100000000000,
+    "status": "approved"
   }
 ]

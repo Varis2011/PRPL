@@ -1,36 +1,68 @@
-// backend/routes/dashboardRoutes.js
-import express from 'express';
-import fs from 'fs';
-import path from 'path';
+import express from "express";
+import pool from "../db.js";
 
 const router = express.Router();
-const budgetsFile = path.resolve('./backend/data/budgets.json');
-const transactionsFile = path.resolve('./backend/data/transaction.json');
 
-router.get('/', (req, res) => {
-  const budgets = JSON.parse(fs.readFileSync(budgetsFile, 'utf8') || '[]');
-  const transactions = JSON.parse(fs.readFileSync(transactionsFile, 'utf8') || '[]');
+router.get("/", async (req, res) => {
+  try {
+    const budgetsResult = await pool.query(
+      "SELECT * FROM budgets_fixed WHERE status = 'approved' ORDER BY id DESC"
+    );
+    const budgets = budgetsResult.rows;
 
-  const totalBudget = budgets
-    .filter((b) => b.status === 'approved')
-    .reduce((sum, b) => sum + Number(b.amount), 0);
+    if (budgets.length === 0) {
+      return res.json({
+        totalBudget: 0,
+        totalIncome: 0,
+        totalExpense: 0,
+        remainingBudget: 0,
+        latestBudget: null,
+      });
+    }
 
-  const totalIncome = transactions
-    .filter((t) => t.type === 'income')
-    .reduce((sum, t) => sum + Number(t.amount), 0);
+    const latestName = budgets[0].title.split(" - ")[0];
+    const latestBudgetRows = budgets.filter(b => b.title.startsWith(latestName));
 
-  const totalExpense = transactions
-    .filter((t) => t.type === 'expense')
-    .reduce((sum, t) => sum + Number(t.amount), 0);
+    const allocations = latestBudgetRows.map(b => ({
+      title: b.category,
+      percentage: ((b.amount / b.total_amount) * 100).toFixed(2),
+      amount: b.amount,
+    }));
 
-  const remainingBudget = totalBudget + totalIncome - totalExpense;
+    const totalBudget = latestBudgetRows.reduce((sum, b) => sum + Number(b.total_amount || 0), 0);
 
-  res.json({
-    totalBudget,
-    totalIncome,
-    totalExpense,
-    remainingBudget,
-  });
+    const trxResult = await pool.query("SELECT * FROM transactions");
+    const transactions = trxResult.rows;
+
+    const totalIncome = transactions
+      .filter(t => t.type === "income")
+      .reduce((sum, t) => sum + Number(t.amount || 0), 0);
+
+    const totalExpense = transactions
+      .filter(t => t.type === "expense")
+      .reduce((sum, t) => sum + Number(t.amount || 0), 0);
+
+    const remainingBudget = totalBudget + totalIncome - totalExpense;
+
+    res.json({
+      totalBudget,
+      totalIncome,
+      totalExpense,
+      remainingBudget,
+      latestBudget: {
+        name: latestName,
+        totalAmount: totalBudget,
+        unexpectedExpensePercent: latestBudgetRows[0].unexpected_percent || 0,
+        allocations,
+      },
+    });
+  } catch (err) {
+    console.error("Dashboard error:", err);
+    res.status(500).json({
+      error: "Failed to fetch dashboard data",
+      details: err.message,
+    });
+  }
 });
 
 export default router;

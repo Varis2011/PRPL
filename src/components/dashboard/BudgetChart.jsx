@@ -1,3 +1,4 @@
+// src/components/budget/BudgetChart.jsx
 import { useEffect, useState } from "react";
 import { getBudgets } from "../../services/budgetService";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
@@ -11,12 +12,32 @@ const BudgetChart = () => {
     async function fetchApprovedBudget() {
       try {
         const budgets = await getBudgets();
-        // ✅ Find the latest approved budget
-        const approved = budgets
-          .filter((b) => b.status === "approved")
-          .sort((a, b) => b.id - a.id)[0];
+        const approved = budgets.filter((b) => b.status === "approved");
+        if (!approved.length) {
+          setBudget(null);
+          return;
+        }
 
-        setBudget(approved || null);
+        // Find the latest budget name prefix
+        // e.g., "november - Infrastructure" → "november"
+        const sorted = approved.sort((a, b) => b.id - a.id);
+        const latestPrefix = sorted[0].title.split(" - ")[0];
+
+        // Get all rows that belong to this budget
+        const latestBudgetRows = approved.filter((b) =>
+          b.title.startsWith(latestPrefix)
+        );
+
+        const totalAmount = latestBudgetRows[0].total_amount;
+        const unexpectedExpensePercent = latestBudgetRows[0].unexpected_percent;
+
+        // Build allocations from all categories
+        const allocations = latestBudgetRows.map((b) => ({
+          title: b.category,
+          percentage: ((b.amount / totalAmount) * 100).toFixed(2),
+        }));
+
+        setBudget({ name: latestPrefix, totalAmount, unexpectedExpensePercent, allocations });
       } catch (error) {
         console.error("Error fetching budgets:", error);
       }
@@ -33,19 +54,15 @@ const BudgetChart = () => {
     );
   }
 
-  // ✅ Prepare chart data
   const chartData = budget.allocations.map((a, index) => ({
-  name: a.title,
-  value: (budget.totalAmount * (parseFloat(a.percentage) || 0)) / 100,
-  color: COLORS[index % COLORS.length],
-}));
+    name: a.title,
+    value: (budget.totalAmount * parseFloat(a.percentage)) / 100,
+    color: COLORS[index % COLORS.length],
+  }));
 
-
-  // Add unexpected expense
   chartData.push({
     name: "Unexpected Expenses",
-    value:
-      (budget.totalAmount * budget.unexpectedExpensePercent) / 100 || 0,
+    value: (budget.totalAmount * budget.unexpectedExpensePercent) / 100,
     color: "#9CA3AF",
   });
 
@@ -69,7 +86,7 @@ const BudgetChart = () => {
               <Cell key={`cell-${index}`} fill={entry.color} />
             ))}
           </Pie>
-          <Tooltip formatter={(value) => `Rp ${value.toLocaleString('id-ID')}`}/>
+          <Tooltip formatter={(value) => `Rp ${value.toLocaleString("id-ID")}`} />
           <Legend />
         </PieChart>
       </div>
