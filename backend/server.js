@@ -10,7 +10,7 @@ import dashboardRoutes from './routes/dashboardRoutes.js';
 const app = express();
 
 // Middleware
-app.use(cors({ origin: '*' })); // allow all origins or set your Vercel URL
+app.use(cors({ origin: '*' })); // allow all origins, or restrict to Vercel domain
 app.use(express.json());
 
 // API routes
