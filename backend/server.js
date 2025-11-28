@@ -3,7 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { pool } from './db.js'; // import named export
+import pool from './db.js'; // <-- FIXED
 
 // Import your routes
 import budgetRoutes from './routes/budgetRoutes.js';
