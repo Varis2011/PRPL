@@ -1,5 +1,5 @@
 // src/services/budgetService.js
-const API_URL = 'http://localhost:5000/api/budgets';
+const API_URL = 'https://prpl-production.up.railway.app/api/budgets';;
 
 export const getBudgets = async () => {
   const res = await fetch(API_URL);

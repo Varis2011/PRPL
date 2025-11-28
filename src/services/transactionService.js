@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:5000/api/transactions';
+const API_URL = 'https://prpl-production.up.railway.app/api/transactions';
+;
 
 export const getTransactions = async () => {
   const res = await fetch(API_URL);
