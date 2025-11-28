@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 import budgetRoutes from './routes/budgetRoutes.js';
 import transactionRoutes from './routes/transactionRoutes.js';
 import dashboardRoutes from './routes/dashboardRoutes.js';
-
+import "./db.js";  
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
