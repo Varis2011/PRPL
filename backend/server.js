@@ -1,14 +1,11 @@
-// backend/server.js
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import pool from './db.js'; // <-- FIXED
-
-// Import your routes
 import budgetRoutes from './routes/budgetRoutes.js';
 import transactionRoutes from './routes/transactionRoutes.js';
 import dashboardRoutes from './routes/dashboardRoutes.js';
+import pool from './db.js'; // default export
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,7 +13,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 // Middleware
-app.use(cors({ origin: '*' })); // allow all origins, or set FRONTEND_URL
+app.use(cors({ origin: '*' })); // allow all origins
 app.use(express.json());
 
 // API routes
@@ -25,9 +22,11 @@ app.use('/api/transactions', transactionRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 
 // Serve frontend static files (SPA)
-app.use(express.static(path.join(__dirname, '../dist')));
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// SPA catch-all route
 app.get(/.*/, (req, res) => {
-    res.sendFile(path.join(__dirname, '../dist/index.html'));
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
 // Health check
