@@ -1,12 +1,30 @@
+// db.js
 import pkg from 'pg';
-import dotenv from 'dotenv';
-dotenv.config();
 
 const { Pool } = pkg;
 
+// Use DATABASE_URL from environment (Railway injects this automatically)
+const connectionString = process.env.DATABASE_URL;
+
+if (!connectionString) {
+  console.error("❌ DATABASE_URL is not defined. Make sure it's set in Railway service variables!");
+  process.exit(1);
+}
+
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl: { rejectUnauthorized: false }
+  connectionString,
+  ssl: {
+    rejectUnauthorized: false, // required for Railway/Postgres over SSL
+  },
 });
 
-export default pool; // ← REQUIRED
+// Test connection
+pool.connect()
+  .then(() => console.log("📌 PostgreSQL Connected Successfully"))
+  .catch(err => {
+    console.error("❌ Database Connection Failed");
+    console.error(err);
+    process.exit(1); // fail fast if DB cannot connect
+  });
+
+export default pool;
