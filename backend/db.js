@@ -1,10 +1,15 @@
 import pkg from 'pg';
 import dotenv from 'dotenv';
-dotenv.config({ path: './.env' });   // ← force load
+
+dotenv.config(); // keep it
+
+console.log("=== ENV KEYS IN RUNTIME ===");
+console.log(Object.keys(process.env)); // <---- list all env keys
+console.log("===========================");
+
+console.log("DATABASE_URL ->", process.env.DATABASE_URL);
 
 const { Pool } = pkg;
-
-console.log("DEBUG ENV → DATABASE_URL =", process.env.DATABASE_URL); // MUST PRINT VALUE
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
@@ -12,10 +17,5 @@ const pool = new Pool({
 });
 
 pool.connect()
-    .then(() => console.log("📌 PostgreSQL Connected Successfully"))
-    .catch(err => {
-        console.log("❌ Database Connection Failed");
-        console.error(err);
-    });
-
-export default pool;
+    .then(() => console.log("📌 Connected"))
+    .catch(err => console.error("❌ DB FAILED\n", err));
