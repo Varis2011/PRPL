@@ -1,8 +1,15 @@
 // src/services/budgetService.js
- const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api/budgets";
+
+// 1. Automatic Switch: 
+// If deployed (Production), use Railway. If local (Dev), use Localhost.
+const API_URL = import.meta.env.PROD 
+  ? "https://prpl-production.up.railway.app/api/budgets" 
+  : "http://localhost:5000/api/budgets";
 
 export const getBudgets = async () => {
   const res = await fetch(API_URL);
+  // Optional: Check if the response is OK to avoid "Unexpected token" errors
+  if (!res.ok) throw new Error('Failed to fetch budgets'); 
   return await res.json();
 };
 
