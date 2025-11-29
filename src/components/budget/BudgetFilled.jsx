@@ -10,10 +10,14 @@ const formatRp = (value) => {
 const BudgetFilled = ({ onEdit }) => {
   const [latestBudget, setLatestBudget] = useState(null);
 
+  // 🔴 FIXED: Use Railway URL
+  const API_URL = "https://prpl-production.up.railway.app/api/budgets";
+
   useEffect(() => {
     const fetchLatestBudget = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/budgets");
+        // 🔴 FIXED: Removed localhost
+        const res = await fetch(API_URL);
         const data = await res.json();
         const approved = data.filter((b) => b.status === "approved");
         const latest = approved[approved.length - 1];

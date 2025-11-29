@@ -15,6 +15,9 @@ const BudgetCreationForm = ({ onSubmit, onBack }) => {
   const [categories, setCategories] = useState(initialCategories);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // 🔴 FIXED: Use Railway URL directly
+  const API_URL = "https://prpl-production.up.railway.app/api/budgets";
+
   const totalFund = 1_000_000_000; // Rp 100B
   const unexpectedPercent = 10;
 
@@ -53,7 +56,8 @@ const BudgetCreationForm = ({ onSubmit, onBack }) => {
           status: "pending",
         };
 
-        const res = await fetch("http://localhost:5000/api/budgets", {
+        // 🔴 FIXED: Removed localhost, using API_URL variable
+        const res = await fetch(API_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
