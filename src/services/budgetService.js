@@ -1,5 +1,5 @@
 // src/services/budgetService.js
-const API_URL = 'https://prpl-production.up.railway.app/api/budgets';;
+const API_URL = '/api/budgets'; // relative path for Vite proxy;;
 
 export const getBudgets = async () => {
   const res = await fetch(API_URL);
