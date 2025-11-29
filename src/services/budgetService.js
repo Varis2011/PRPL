@@ -1,16 +1,24 @@
 // src/services/budgetService.js
 
-// 1. Automatic Switch: 
-// If deployed (Production), use Railway. If local (Dev), use Localhost.
-const API_URL = import.meta.env.PROD 
-  ? "https://prpl-production.up.railway.app/api/budgets" 
-  : "http://localhost:5000/api/budgets";
+// 🔴 FORCE RAILWAY URL. 
+// Do not use "import.meta.env" or "localhost" right now. 
+// We want to prove it works first.
+const API_URL = "https://prpl-production.up.railway.app/api/budgets";
 
 export const getBudgets = async () => {
-  const res = await fetch(API_URL);
-  // Optional: Check if the response is OK to avoid "Unexpected token" errors
-  if (!res.ok) throw new Error('Failed to fetch budgets'); 
-  return await res.json();
+  console.log("🔍 Attempting to fetch budgets from:", API_URL);
+  
+  try {
+    const res = await fetch(API_URL);
+    if (!res.ok) throw new Error(`Server returned ${res.status}`);
+    const data = await res.json();
+    console.log("✅ Budgets fetched successfully:", data);
+    return data;
+  } catch (error) {
+    console.error("❌ Error in getBudgets:", error);
+    // Return empty array so the app doesn't crash (white screen)
+    return []; 
+  }
 };
 
 export const createBudget = async (budget) => {
