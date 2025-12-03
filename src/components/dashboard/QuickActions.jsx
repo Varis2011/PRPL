@@ -16,12 +16,8 @@ const QuickActions = () => {
           description="Create a new transaction"
           onClick={() => setIsAddTransactionModalOpen(true)}
         />
-        {/* Generate Report [cite: 198-199] */}
-        <ActionCard
-          icon={<FileText size={20} />}
-          title="Generate report"
-          description="Generate a new report"
-        />
+      
+      
       </div>
     </div>
   );

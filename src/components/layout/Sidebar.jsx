@@ -18,7 +18,7 @@ const Sidebar = () => {
           <li><SidebarLink icon={<LayoutDashboard size={20} />} to="/">Dashboard</SidebarLink></li>
           <li><SidebarLink icon={<Wallet size={20} />} to="/budget">Budget</SidebarLink></li>
           <li><SidebarLink icon={<Receipt size={20} />} to="/transactions">Transaction</SidebarLink></li>
-          <li><SidebarLink icon={<FileText size={20} />} to="/report">Report</SidebarLink></li>
+         
         </ul>
       </nav>
 
