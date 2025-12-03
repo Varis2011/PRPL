@@ -1,7 +1,7 @@
 // src/components/budget/BudgetCreationForm.jsx
 import { useState } from "react";
 import { ArrowLeft, Plus } from "lucide-react";
-// Import service to use Railway URL
+// Import the service to use the correct Railway URL
 import { createBudget } from "../../services/budgetService";
 
 const initialCategories = [
@@ -17,12 +17,14 @@ const BudgetCreationForm = ({ onSubmit, onBack }) => {
   const [categories, setCategories] = useState(initialCategories);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const totalFund = 1_000_000_000; 
+  const totalFund = 1_000_000_000; // Rp 100B
   const unexpectedPercent = 10;
 
   const handleCategoryChange = (id, value) => {
     setCategories((prev) =>
-      prev.map((cat) => cat.id === id ? { ...cat, percentage: value } : cat)
+      prev.map((cat) =>
+        cat.id === id ? { ...cat, percentage: value } : cat
+      )
     );
   };
 
@@ -43,8 +45,8 @@ const BudgetCreationForm = ({ onSubmit, onBack }) => {
         const amount = Math.floor((totalFund * percent) / 100);
 
         const payload = {
-          // ✅ FIX: Use pure title (e.g., "December")
-          // This ensures all categories belong to the exact same group.
+          // ✅ FIX: Save with the EXACT SAME title for all categories
+          // This allows them to be grouped together later.
           title: budgetTitle, 
           amount,
           category: cat.title,
@@ -54,7 +56,7 @@ const BudgetCreationForm = ({ onSubmit, onBack }) => {
           status: "pending",
         };
 
-        // Send to Railway
+        // Use service to send to Railway
         await createBudget(payload);
       }
 
@@ -62,7 +64,7 @@ const BudgetCreationForm = ({ onSubmit, onBack }) => {
       onSubmit();
     } catch (err) {
       console.error(err);
-      alert("Error: " + err.message);
+      alert("Error submitting budget: " + err.message);
     } finally {
       setIsSubmitting(false);
     }
@@ -90,7 +92,7 @@ const BudgetCreationForm = ({ onSubmit, onBack }) => {
         <h3 className="text-lg font-semibold text-gray-700 mb-3">Allocation</h3>
         <div className="space-y-4">
           {categories.map((cat) => {
-            const amount = Math.floor((totalFund * (Number(cat.percentage)||0)) / 100);
+            const amount = Math.floor((totalFund * (Number(cat.percentage) || 0)) / 100);
             return (
               <div key={cat.id} className="flex items-center gap-4">
                 <input 
@@ -118,7 +120,7 @@ const BudgetCreationForm = ({ onSubmit, onBack }) => {
               </div>
             );
           })}
-          <button type="button" onClick={handleAddCategory} className="flex items-center gap-2 text-blue-600 font-medium">
+          <button type="button" onClick={handleAddCategory} className="flex items-center gap-2 text-blue-600 font-medium hover:text-blue-800">
             <Plus size={20} /> <span>Add new category</span>
           </button>
         </div>
@@ -129,7 +131,7 @@ const BudgetCreationForm = ({ onSubmit, onBack }) => {
            <span className="text-sm text-gray-500">Available fund</span>
            <p className="text-xl font-semibold text-gray-800">Rp {totalFund.toLocaleString("id-ID")}</p>
          </div>
-         <button onClick={handleSubmit} disabled={isSubmitting} className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700">
+         <button onClick={handleSubmit} disabled={isSubmitting} className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
            {isSubmitting ? "Submitting..." : "Ask for Approval"}
          </button>
       </div>
